@@ -5,24 +5,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
 import android.util.Log;
-
-import android.widget.TextView;
-
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -85,14 +72,12 @@ public class Fragment1 extends Fragment {
 
             for (int i=0; i<jsonArray.length() ; i++){
 
-
                 JSONObject jsonObject1 = (JSONObject) jsonArray.get(i);
 
                 String name = jsonObject1.getString("name");
                 String mbti = jsonObject1.getString("mbti");
                 String birth = jsonObject1.getString("birth");
                 String call = jsonObject1.getString("call");
-
 
                 dto = new DataDTO(name,mbti, birth, call);
                 data.add(dto);
@@ -103,8 +88,8 @@ public class Fragment1 extends Fragment {
         } finally {
             try{
 
-                if (inputStream != null ) inputStream.close();
-                if(inputStreamReader != null ) inputStreamReader.close();
+                if(inputStream != null) inputStream.close();
+                if(inputStreamReader != null) inputStreamReader.close();
                 if(bufferedReader != null) bufferedReader.close();
 
             }
