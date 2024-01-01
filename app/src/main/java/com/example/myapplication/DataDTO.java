@@ -7,13 +7,35 @@ public class DataDTO {
     String birth;
     String call;
 
-    public DataDTO(String name, String mbti, String birth, String call){
+    int imageResource;
+
+
+
+
+    public DataDTO(String name, String mbti, String birth, String call, int imageResource){
 
         this.name = name;
         this.mbti= mbti;
         this.birth = birth;
         this.call = call;
+        this.imageResource=imageResource;
+
+
     }
+
+
+    public int getImageResource(){
+
+        return imageResource;
+
+    }
+
+    public void setImageResource(int imageResource){
+
+        this.imageResource=imageResource;
+
+    }
+
 
     public String getName(){
 
