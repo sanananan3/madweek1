@@ -11,23 +11,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="title"
-        android:textSize="10pt" />
+        android:fontFamily="@font/nshv"
+        android:textSize="30sp"
+        android:layout_margin="20dp"/>
 
     <LinearLayout
         android:id="@+id/movie_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/movie_poster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_gravity="center" />
 
 

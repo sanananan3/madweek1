@@ -133,9 +133,9 @@ public class Fragment2 extends Fragment {
 
 
             ImageView imageView = new ImageView(context);
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(500, 800));
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(context.getResources().getDisplayMetrics().widthPixels/2, context.getResources().getDisplayMetrics().widthPixels*3/4));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            imageView.setPadding(2, 0, 0, 0);
+            imageView.setPadding(0, 0, 10, 0);
             imageView.setImageResource(imgID1[i]);
 
             final int pos = i;
@@ -270,9 +270,9 @@ public class Fragment2 extends Fragment {
             catch (JSONException e) {e.printStackTrace();}
 
             ImageView imageView = new ImageView(context);
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(500, 800));
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(context.getResources().getDisplayMetrics().widthPixels/2, context.getResources().getDisplayMetrics().widthPixels*3/4));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            imageView.setPadding(0, 0, 2, 0);
+            imageView.setPadding(10, 0, 0, 0);
             imageView.setImageResource(imgID2[i]);
 
             final int pos = 10+i;

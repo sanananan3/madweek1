@@ -2,49 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="120dp"
-    android:layout_height="180dp"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:layout_marginEnd="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
     tools:context=".Fragment3">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        card_view:cardBackgroundColor="@color/white"
-        card_view:cardCornerRadius="8dp">
+        android:layout_width="100dp"
+        android:layout_height="170dp"
+        android:layout_margin="0dp"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="#44C0CC"
+        card_view:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:src="@drawable/baseline_circle_24" />
-
             <TextView
-                android:id="@+id/selected_movie"
+                android:id="@+id/id_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView"
+                android:text="MOVIE"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textSize="15sp"
+                android:fontFamily="@font/nshv"
+                android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textview_review_item"
+                android:id="@+id/id_review"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
-                android:background="@color/white"
                 android:text="후기"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
+                android:textSize="12sp"
+                android:fontFamily="@font/nsrg"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:textColor="@color/white" />
+
+            <RatingBar
+                android:id="@+id/ratingBar_result"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:progressTint="#4F2E96"
+                android:rating="5"
+                android:stepSize="0.5" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
