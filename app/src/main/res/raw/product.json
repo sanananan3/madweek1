@@ -1,0 +1,163 @@
+{
+    "2분반" :
+    [
+      {
+        "name" : "박병찬",
+        "mbti" : "ENTP",
+        "birth" : "2003",
+        "call": "010-1234-5678",
+        "image": "parkbeungchan"
+      },
+      {
+        "name" : "김주영",
+        "mbti" : "ESFP",
+        "birth" : "1999",
+        "call": "010-2345-6789",
+        "image": "kimjooyung"
+      },
+      {
+        "name" : "김융",
+        "mbti" : "INFP",
+        "birth" : "2003",
+        "call": "010-3456-7891",
+        "image": "kimyeoung"
+      },
+
+
+      {
+        "name" : "전윤혁",
+        "mbti" : "ENTJ",
+        "birth" : "1999",
+        "call": "010-1234-5678",
+        "image": "junyunheok"
+      },
+
+      {
+        "name" : "조서윤",
+        "mbti" : "INFJ",
+        "birth" : "2003",
+        "call": "010-1222-5678",
+        "image": "choseoyun"
+      }
+      ,
+      {
+        "name" : "이하영",
+        "mbti" : "ISTJ",
+        "birth" : "2001",
+        "call": "010-5678-5678",
+        "image": "leehayung"
+      },
+
+      {
+        "name" : "한채연",
+        "mbti" : "ISFP",
+        "birth" : "2000",
+        "call": "010-1212-3434",
+
+        "image": "hanchaeyeon"
+      },
+
+      {
+        "name" : "박강태",
+        "mbti" : "ESFJ",
+        "birth" : "2001",
+        "call": "010-1234-1234",
+        "image": "parkgangtae"
+      },
+      {
+        "name" : "남승훈",
+        "mbti" : "ENTJ",
+        "birth" : "2004",
+        "call": "010-5678-5678",
+        "image": "namsenghoon"
+      },
+      {
+        "name" : "송지효",
+        "mbti" : "ISTP",
+        "birth" : "2002",
+        "call": "010-1234-1234",
+        "image": "songjihyo"
+      },
+      {
+        "name" : "하준학",
+        "mbti" : "INTP",
+        "birth" : "2000",
+        "call": "010-3434-5678",
+        "image": "hajunhak"
+      }
+      ,
+      {
+        "name" : "김동하",
+        "mbti" : "ISFJ",
+        "birth" : "2000",
+        "call": "010-2000-2000",
+        "image": "kimdongha"
+      },
+      {
+        "name" : "고영",
+        "mbti" : "INFJ",
+        "birth" : "2002",
+        "call": "010-1234-5678",
+        "image": "hoyung"
+      },
+      {
+        "name" : "정지연",
+        "mbti" : "ENTP",
+        "birth" : "2001",
+        "call": "010-1234-5678",
+        "image": "jungjiyeon"
+      },
+
+      {
+        "name" : "김선희",
+        "mbti" : "INTP",
+        "birth" : "2002",
+        "call": "010-3434-2002",
+        "image": "kimsunhee"
+      },
+
+      {
+        "name" : "박현우",
+        "mbti" : "INTP",
+        "birth" : "2000",
+        "call": "010-0000-1111",
+        "image": "parkhynwoo"
+      },
+      {
+        "name" : "양혜민",
+        "mbti" : "ESFJ",
+        "birth" : "2001",
+        "call": "010-2001-2001",
+        "image": "yanghyemin"
+      }
+      ,
+      {
+        "name" : "강승완",
+        "mbti" : "INTJ",
+        "birth" : "2001",
+        "call": "010-9876-5432",
+        "image": "gangseungwan"
+      },
+      {
+        "name" : "박은비",
+        "mbti" : "ISTP",
+        "birth" : "2003",
+        "call": "010-1234-5678",
+        "image": "parkeunbi"
+      },
+      {
+        "name" : "양준원",
+        "mbti" : "ABCD",
+        "birth" : "2024",
+        "call": "010-1234-5678",
+        "image": "yangjunwon"
+      },
+      {
+        "name" : "나지연",
+        "mbti" : "ISTP",
+        "birth" : "2002",
+        "call": "010-1004-1004",
+        "image": "najiyeon"
+      }
+    ]
+  }

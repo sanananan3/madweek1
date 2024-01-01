@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ECECEC">
+
+    <TextView
+        android:id="@+id/tv_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="리뷰를 작성할 영화를 선택하세요"
+        android:fontFamily="@font/nshv"
+        android:textAlignment="center"
+        android:textSize="8pt"
+        android:textColor="#4F2E96"/>
+
+    <EditText
+        android:id="@+id/add_review_edit"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:hint="리뷰를 여기에 작성하세요."
+        android:textSize="15sp"
+        android:fontFamily="@font/nsrg"
+        android:inputType="textMultiLine"/>
+
+    <RatingBar
+        android:id="@+id/RatingBar"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:progressTint="@android:color/holo_orange_dark"
+        android:rating="0"
+        android:stepSize="0.5"
+        android:layout_margin="20dp"
+        />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4F2E96"
+        android:fontFamily="@font/nshv"
+        android:textSize="20sp"
+        android:text="  작성  "/>
+</LinearLayout>

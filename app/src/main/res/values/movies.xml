@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movies">
+        <item>다크나이트</item>
+        <item>아이언맨 3</item>
+        <item>듄</item>
+        <item>먼 훗날 우리</item>
+        <item>부당거래</item>
+        <item>귀멸의 칼날</item>
+        <item>노량</item>
+        <item>날씨의 아이</item>
+        <item>오펜하이머</item>
+        <item>엑스맨</item>
+        <item>신세계</item>
+        <item>범죄도시</item>
+        <item>해리포터</item>
+        <item>서울의 봄</item>
+        <item>엘리멘탈</item>
+        <item>스즈메의 문단속</item>
+        <item>밀수</item>
+        <item>더 퍼스트 스램덩크</item>
+        <item>가디언즈 오브 갤럭시</item>
+        <item>콘크리트 유토피아</item>
+    </string-array>
+</resources>

@@ -1,73 +1,51 @@
 package com.example.myapplication;
 
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.SearchView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
+import android.view.View;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
-
-    TabLayout tabs;
-    Fragment1 fragment1;
-    Fragment2 fragment2;
-    Fragment3 fragment3;
-    int position;
-
+    TabLayout tabLayout;
+    ViewPager2 viewPager;
+    TabPagerAdapter adapter;
 
     @Override
-
-
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle("탭1");
-        tabs = findViewById((R.id.tabs));
-        tabs.addTab(tabs.newTab().setText("탭1"));
-        tabs.addTab(tabs.newTab().setText("탭2"));
-        tabs.addTab(tabs.newTab().setText("탭3"));
+        //xml 연결
+        tabLayout = findViewById(R.id.tab);
+        viewPager = findViewById(R.id.viewPager);
+        //adapter 연결
+        adapter = new TabPagerAdapter(this);
+        viewPager.setAdapter(adapter);
 
-        fragment1 = new Fragment1();
-        fragment2 = new Fragment2();
-        fragment3 = new Fragment3();
+        //TabLayout, ViewPager 연결
+        new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy(){
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.containers, fragment1).commit();
-
-        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-
-            public void onTabReselected(TabLayout.Tab tab){}
-            public void onTabUnselected(TabLayout.Tab tab){}
-            public void onTabSelected(TabLayout.Tab tab){
-
-                position = tab.getPosition(); // 탭 위치
-
-                Fragment selected = fragment1;
-
-                if(position ==0){
-
-                    selected = fragment1;
-                    getSupportActionBar().setTitle("탭1");
-
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch(position){
+                    case 0:
+                        tab.setIcon(R.drawable.icon1);
+                        break;
+                    case 1:
+                        tab.setIcon(R.drawable.icon2);
+                        break;
+                    case 2:
+                        tab.setIcon(R.drawable.icon3);
+                        break;
                 }
-
-                else if (position==1){
-
-                    selected = fragment2;
-                    getSupportActionBar().setTitle("탭2");
-                }
-
-                else if (position==2){
-
-                    selected = fragment3;
-                    getSupportActionBar().setTitle("탭3");
-                }
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.containers,selected).commit();
             }
-
-
-        });
+        }).attach();
     }
 }

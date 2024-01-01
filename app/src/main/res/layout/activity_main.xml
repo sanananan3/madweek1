@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+
+
+
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+        android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:background="#ECECEC"
+        android:layout_alignParentBottom="true"
+        >
+    </com.google.android.material.tabs.TabLayout>
 
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:tabTextColor="#000000"
-        android:elevation="1dp"
-    />
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_above="@+id/tab"
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ECECEC"
+        >
+    </androidx.viewpager2.widget.ViewPager2>
 
-<FrameLayout
-    android:id="@+id/containers"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    />
 
-</LinearLayout>
+
+</RelativeLayout>
