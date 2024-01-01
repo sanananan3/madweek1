@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-
     Context mContext;
     ArrayList<DataDTO> data;
     private FragmentManager fragmentManager;
@@ -59,7 +58,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
 
         TextView tv_name, tv_mbti, tv_birth, tv_call;
         ImageView iv_image;

@@ -33,7 +33,6 @@ android {
 
 dependencies {
 
-
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -42,8 +41,11 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     //noinspection GradleCompatible
     implementation("com.google.android.material:material:1.11.0")
+    implementation("com.google.android.material:material:1.4.0")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     implementation("com.makeramen:roundedimageview:2.3.0")
     implementation ("androidx.cardview:cardview:1.0.0")
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }
