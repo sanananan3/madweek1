@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.content.Context;
@@ -7,7 +8,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.os.Handler;
+import android.os.CountDownTimer;
 
+
+
+import android.graphics.drawable.ColorDrawable;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -20,6 +26,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     Context mContext;
     ArrayList<DataDTO> data;
     private FragmentManager fragmentManager;
+    ProgressDialog customProgressDialog;
+
+    private String selectedMovName;
 
 
     public RecyclerAdapter(Context mContext, ArrayList<DataDTO> data, FragmentManager fragmentManager){
@@ -38,7 +47,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return viewHolder;
     }
 
-    public void onBindViewHolder(ViewHolder holder, int position){
+    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") int position){
 
         holder.tv_name.setText(data.get(position).getName());
         holder.tv_mbti.setText(data.get(position).getMbti());
@@ -46,10 +55,32 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.tv_call.setText(data.get(position).getCall());
         holder.iv_image.setImageResource(data.get(position).getImageResource());
 
+
+        customProgressDialog = new ProgressDialog(mContext);
+        customProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
         holder.rv_button.setOnClickListener(v -> {
-            MyDialogFragment myDialogFragment = new MyDialogFragment();
-            myDialogFragment.show(((AppCompatActivity) mContext).getSupportFragmentManager(), "MyDialogFragment");
+            customProgressDialog.show();
+
+            new CountDownTimer(6000, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    // Do nothing on tick if needed
+                }
+
+                public void onFinish() {
+                    ((AppCompatActivity) mContext).runOnUiThread(() -> {
+                        customProgressDialog.dismiss();
+                    });
+
+                    selectedMovName = data.get(position).getName();
+                    MyDialogFragment myDialogFragment = MyDialogFragment.newInstance(selectedMovName); // Pass the selected tv_name
+
+                    myDialogFragment.show(((AppCompatActivity) mContext).getSupportFragmentManager(), "MyDialogFragment");
+                }
+            }.start();
         });
+
+
     }
 
     public int getItemCount(){
@@ -75,4 +106,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         }
     }
+
 }

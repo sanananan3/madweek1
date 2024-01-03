@@ -6,6 +6,8 @@ import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
+import android.util.Log;
+
 import android.view.View;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;
     TabPagerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

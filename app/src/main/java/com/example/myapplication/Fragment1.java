@@ -1,24 +1,27 @@
 package com.example.myapplication;
 
-import android.app.AlertDialog;
+
 import android.os.Bundle;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
-import android.widget.LinearLayout;
+
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
+import android.app.ProgressDialog;
+import android.widget.ScrollView;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,6 +33,8 @@ import java.util.ArrayList;
 
 public class Fragment1 extends Fragment {
 
+
+
     private SearchView searchView;
     RecyclerView rv_recycle;
     RecyclerView.LayoutManager layoutManager;
@@ -39,13 +44,21 @@ public class Fragment1 extends Fragment {
 
     int currentPosition = 0;
     Button rv_button;
+    View view;
 
     public Fragment1() {
         // Required empty public constructor
+
     }
 
     public static Fragment1 newInstance() {
         Fragment1 fragment1 = new Fragment1();
+        FragmentManager fragmentManager = fragment1.getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.confirm_movie, fragment1, "fragment1"); // Set the tag here
+        transaction.addToBackStack(null); // Optionally add the transaction to the back stack
+        transaction.commit();
         return fragment1;
     }
 
@@ -53,7 +66,9 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_1, container, false);
+         view = inflater.inflate(R.layout.fragment_1, container, false);
+
+
 
         rv_recycle = view.findViewById(R.id.rv_recycle);
         parser();
@@ -69,8 +84,6 @@ public class Fragment1 extends Fragment {
             public boolean onQueryTextSubmit(String query){
 
                 ArrayList<Integer> matchingPositions = new ArrayList<>();
-
-
 
                for (int i=0;i<data.size();i++){
 
@@ -92,6 +105,9 @@ public class Fragment1 extends Fragment {
                    rv_recycle.scrollToPosition(matchingPositions.get(currentPosition));
                    currentPosition++;
                }
+
+
+
                 return true;
                 }
                 public boolean onQueryTextChange(String newText){
@@ -100,8 +116,17 @@ public class Fragment1 extends Fragment {
 
             }
 
+
+
         });
 
+
+        searchView.setOnCloseListener(()-> {
+
+            rv_recycle.scrollToPosition(0);
+            return false;
+
+        });
 
         return view;
 
@@ -164,6 +189,23 @@ public class Fragment1 extends Fragment {
         }
     }
 
+
+
+    public void updateContent(String personName, String movieDetails) {
+        // Check if the view is created before accessing it
+        if(view!=null){
+        TextView textView1 = view.findViewById(R.id.confirm_name);
+        TextView textView2 = view.findViewById(R.id.confirm_movie);
+
+        textView1.setText("Selected Person: " + personName + "\n");
+        textView2.setText("Selected Person: " + movieDetails + "\n");
+}
+
+        else {
+
+            Log.d ("fragment1", "여기다여기뎌억 view 또 실패 .. ");
+        }
+    }
 
 
 }
