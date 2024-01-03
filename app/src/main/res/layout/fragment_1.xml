@@ -13,7 +13,9 @@
     android:layout_marginLeft="9dp"
     android:layout_marginBottom="10dp"
     android:background="#ECECEC"
-    tools:context=".Fragment1">
+    tools:context=".Fragment1"
+
+    >
 
 
     <androidx.appcompat.widget.SearchView
@@ -22,11 +24,11 @@
         android:id="@+id/searchView"
         android:iconifiedByDefault="true"
         android:layout_marginLeft="10dp"
-
         android:layout_marginTop="20dp"
         app:queryHint="영화 보러 갈 2분반 친구"
 
         />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_recycle"
